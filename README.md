@@ -6,6 +6,30 @@ golang: goatee
 Screw Google's verbose Go testing package. "go t", or "goatee" will help make your tests more concise and readable.
 
 
+Why?
+----
+
+Because, this is too verbose:
+
+```go
+myvar := "hello"
+if myvar != "hell" {
+  t.Error("%s != hell\n", myvar)
+}
+```
+
+more concise:
+
+```go
+myvar := "hello"
+assert.True(myvar, "hell")
+
+//even better:
+t.T (myvar, "hell")
+```
+
+
+
 Installing
 ----------
 
